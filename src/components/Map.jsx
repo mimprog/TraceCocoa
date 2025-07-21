@@ -12,7 +12,7 @@ import html2canvas from "html2canvas";
 import { FiFilter, FiX } from "react-icons/fi";
 import Footer from "./Footer";
 import 'leaflet/dist/leaflet.css';
-import { translations, t } from "../constants/translation";
+import {t } from "../constants/translation";
 import queryString from "query-string";
 import {motion} from "framer-motion";
 // [tile and theme options]
@@ -36,7 +36,7 @@ const teamColorMap = {
 
 const Map = () => {
   const [geojsonData, setGeojsonData] = useState(null);
-  const [errMsg, setErrMsg] = useSt("");
+  const [errMsg, setErrMsg] = useState("");
   const [tileType, setTileType] = useState("Satellite");
   const [theme, setTheme] = useState("Light");
   const [searchQuery, setSearchQuery] = useState("");
@@ -44,7 +44,7 @@ const Map = () => {
   const [selectedData, setSelectedData] = useState(null);
   const [showLegend, setShowLegend] = useState(true);
   const [showFilterPanel, setShowFilterPanel] = useState(false);
-  const [userCode, setUserCode] = uateseState("");
+  const [userCode, setUserCode] = useState("");
   const [features, setFeatures] = useState([]);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
    const [limitGeojsonData, setLimitGeojsonData] = useState(null);
