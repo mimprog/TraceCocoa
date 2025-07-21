@@ -1,6 +1,6 @@
 // Base URL configuration
 //const CLIENT_URL = "http://localhost:3000"; // Single source of truth for base URL
-const CLIENT_URL = 'https://Trace_Cocoa.onrender.com';
+const CLIENT_URL = 'https://trace_cocoa.onrender.com';
 
 // Frontend site URLs (for navigation/linking)
 const SITE_URL = {
