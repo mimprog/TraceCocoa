@@ -1,84 +1,91 @@
-// Base URL configuration
-//const CLIENT_URL = "http://localhost:3000"; // Single source of truth for base URL
-const CLIENT_URL = 'https://trace-cocoa.onrender.com';
+// Base URL (ONLY for API calls or external links, NOT React Router)
+const CLIENT_URL = "https://trace-cocoa.onrender.com";
 
-// Frontend site URLs (for navigation/linking)
-const SITE_URL = {
+/**
+ * React Router CLIENT ROUTES (IMPORTANT: path-only, no domain)
+ */
+export const SITE_URL = {
   // Public routes
-  HOME: `${CLIENT_URL}/`,
-  MAP: `${CLIENT_URL}/map`,
-  ASSISTANCE: `${CLIENT_URL}/assistance`,
-  ABOUT: `${CLIENT_URL}/about`,
-  TERMS: `${CLIENT_URL}/termsofuse`,
-  PRIVACY: `${CLIENT_URL}/privacy`,
-  COOKIE_POLICY: `${CLIENT_URL}/cookie`,
-  HELP: `${CLIENT_URL}/help`,
-  SETTINGS: `${CLIENT_URL}/settings`,
-  LOGIN: `${CLIENT_URL}/login`,
-  LOCATION: `${CLIENT_URL}/location`,
-  AUTH_ERROR: `${CLIENT_URL}/auth/error`,
-  REGISTER: `${CLIENT_URL}/register`,
-  VERIFY_EMAIL: `${CLIENT_URL}/verifyEmailCode`,
+  HOME: "/",
+  MAP: "/map",
+  ASSISTANCE: "/assistance",
+  ABOUT: "/about",
+  TERMS: "/termsofuse",
+  PRIVACY: "/privacy",
+  COOKIE_POLICY: "/cookie",
+  HELP: "/help",
+  SETTINGS: "/settings",
+  LOGIN: "/login",
+  LOCATION: "/location",
+  AUTH_ERROR: "/auth/error",
+  REGISTER: "/register",
+  VERIFY_EMAIL: "/verifyEmailCode",
 
-  // Authenticated user routes
-  TEST: `${CLIENT_URL}/test`,
-  PROFILE: `${CLIENT_URL}/profile`,
+  // User routes
+  TEST: "/test",
+  PROFILE: "/profile",
 
   // Admin routes
-  ADMIN_DASHBOARD: `${CLIENT_URL}/admin/dashboard`,
-  ADMIN_USERS: `${CLIENT_URL}/admin/user`,
-  ADMIN_ADD_USER: `${CLIENT_URL}/admin/user/add`,
-  ADMIN_EDIT_USER: `${CLIENT_URL}/admin/user/edit`,
-  ADMIN_COOPERATIVES: `${CLIENT_URL}/admin/cooperative`,
-  ADMIN_ADD_COOPERATIVE: `${CLIENT_URL}/admin/cooperative/add`,
-  ADMIN_EDIT_COOPERATIVE: `${CLIENT_URL}/admin/cooperative/edit`,
-  ADMIN_PLOTS: `${CLIENT_URL}/admin/plot`,
-  ADMIN_ADD_PLOT: `${CLIENT_URL}/admin/plot/add`,
-  ADMIN_EDIT_PLOT: `${CLIENT_URL}/admin/plot/edit`,
-  ADMIN_SALES: `${CLIENT_URL}/admin/sale`,
-  ADMIN_ADD_SALE: `${CLIENT_URL}/admin/sale/add`,
-  ADMIN_EDIT_SALE: `${CLIENT_URL}/admin/sale/edit`,
-  ADMIN_PURCHASES: `${CLIENT_URL}/admin/purchase`,
-  ADMIN_ADD_PURCHASE: `${CLIENT_URL}/admin/purchase/add`,
-  ADMIN_EDIT_PURCHASE: `${CLIENT_URL}/admin/purchase/edit`,
-  ADMIN_ROLES: `${CLIENT_URL}/admin/role`,
-  ADMIN_EXPORTERS: `${CLIENT_URL}/admin/exporter`,
-  ADMIN_ADD_EXPORTER: `${CLIENT_URL}/admin/exporter/add`,
-  ADMIN_EDIT_EXPORTER: `${CLIENT_URL}/admin/exporter/edit`
+  ADMIN_DASHBOARD: "/admin/dashboard",
+
+  ADMIN_USERS: "/admin/user",
+  ADMIN_ADD_USER: "/admin/user/add",
+  ADMIN_EDIT_USER: "/admin/user/edit",
+
+  ADMIN_COOPERATIVES: "/admin/cooperative",
+  ADMIN_ADD_COOPERATIVE: "/admin/cooperative/add",
+  ADMIN_EDIT_COOPERATIVE: "/admin/cooperative/edit",
+
+  ADMIN_PLOTS: "/admin/plot",
+  ADMIN_ADD_PLOT: "/admin/plot/add",
+  ADMIN_EDIT_PLOT: "/admin/plot/edit",
+
+  ADMIN_SALES: "/admin/sale",
+  ADMIN_ADD_SALE: "/admin/sale/add",
+  ADMIN_EDIT_SALE: "/admin/sale/edit",
+
+  ADMIN_PURCHASES: "/admin/purchase",
+  ADMIN_ADD_PURCHASE: "/admin/purchase/add",
+  ADMIN_EDIT_PURCHASE: "/admin/purchase/edit",
+
+  ADMIN_ROLES: "/admin/role",
+
+  ADMIN_EXPORTERS: "/admin/exporter",
+  ADMIN_ADD_EXPORTER: "/admin/exporter/add",
+  ADMIN_EDIT_EXPORTER: "/admin/exporter/edit",
 };
 
-// Grouped route exports
+/**
+ * Grouped exports (optional convenience)
+ */
 export const PUBLIC_ROUTES = {
   HOME: SITE_URL.HOME,
   MAP: SITE_URL.MAP,
   LOGIN: SITE_URL.LOGIN,
-  REGISTER: SITE_URL.REGISTER
+  REGISTER: SITE_URL.REGISTER,
 };
 
 export const AUTH_ROUTES = {
   PROFILE: SITE_URL.PROFILE,
-  SETTINGS: SITE_URL.SETTINGS
+  SETTINGS: SITE_URL.SETTINGS,
 };
 
 export const ADMIN_ROUTES = {
   DASHBOARD: SITE_URL.ADMIN_DASHBOARD,
   USERS: SITE_URL.ADMIN_USERS,
-  PLOTS: SITE_URL.ADMIN_PLOTS
+  SALES: SITE_URL.ADMIN_SALES,
 };
 
-// Main exports
-export { SITE_URL };
-
-// Destructured route exports
+/**
+ * Destructured exports (for direct imports)
+ */
 export const {
-  // Common routes
   HOME,
   MAP,
   LOGIN,
   REGISTER,
   PROFILE,
-  
-  // Admin routes
+
   ADMIN_DASHBOARD,
   ADMIN_USERS,
   ADMIN_ADD_USER,
@@ -98,8 +105,10 @@ export const {
   ADMIN_ROLES,
   ADMIN_EXPORTERS,
   ADMIN_ADD_EXPORTER,
-  ADMIN_EDIT_EXPORTER
+  ADMIN_EDIT_EXPORTER,
 } = SITE_URL;
 
-// Default export
+/**
+ * Default export (ONLY use if needed elsewhere)
+ */
 export default CLIENT_URL;
